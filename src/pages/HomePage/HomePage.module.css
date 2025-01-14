@@ -1,0 +1,51 @@
+.homePage{
+    background-color: var(--main);
+    background: linear-gradient(
+      57deg,
+      rgba(0, 0, 0, 0.4) 0%,
+      rgba(0, 0, 0, 0) 100%
+    ),
+    url('../../images/homeHero.jpg');
+    max-width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 260px 64px 260px 0;
+    text-align: start;
+
+}
+
+.title{
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 0.67;
+  color: var(--inputs);
+  margin-bottom: 16px;
+
+}
+
+.titleInfo{
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.33;
+  color: var(--inputs);
+  margin-bottom: 40px; 
+
+}
+
+.viewBtn{
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  color: var(--white);
+  border-radius: 200px;
+  padding: 16px 60px;
+  width: 173px;
+  height: 56px;
+  background: var(--button-nav);
+
+}

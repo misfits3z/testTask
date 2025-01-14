@@ -1,5 +1,5 @@
 
-export default function CatalogPage() {
+export default function NotFoundPage() {
     return (
         <>
         </>

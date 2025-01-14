@@ -1,0 +1,15 @@
+.header {
+  border-bottom: 1px solid var(--badges);
+  padding: 24px 64px;
+  background: var(--inputs);
+}
+
+.headerContent{
+    display: flex;
+    justify-content: space-between;   
+}
+
+
+
+
+

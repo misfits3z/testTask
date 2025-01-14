@@ -1,0 +1,28 @@
+.activeLink {
+  color: var(--button-nav-hover);
+  
+}
+
+/* .activeLink:hover{
+    color: brown;
+} */
+
+.inactiveLink {
+  color: var(--main);
+}
+
+/* .inactiveLink:hover{
+    color: rgb(55, 52, 52);
+} */
+
+nav{
+  width: calc(100% - 136px);
+  display: flex;
+  gap: 32px;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  justify-content: center;
+  
+}
