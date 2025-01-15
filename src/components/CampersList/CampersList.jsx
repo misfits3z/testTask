@@ -17,7 +17,8 @@ export default function CampersList() {
     
     return (
         <ul>
-            {campers.map((camper) => (
+            {campers && campers.items &&
+            campers.items.map((camper) => (
                 <CamperCard key={camper.id} camper={camper}/>
 
             ))}      
