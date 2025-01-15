@@ -1,28 +1,26 @@
 import { useSelector, useDispatch } from "react-redux";
-
-import { selectCampers } from "../../redux/selectors";
+import { selectFilteredCampers  } from '../../redux/selectors'
+// import { selectCampers } from "../../redux/selectors";
 import CamperCard from '../CamperCard/CamperCard'
 import { useEffect } from "react";
 import { getCampersList } from "../../redux/operations";
 
 
 export default function CampersList() {
-    const dispatch = useDispatch();
-    const campers = useSelector(selectCampers);
-   
-    useEffect(() => {
-        dispatch(getCampersList());
-    }, [dispatch]);
-    
-    
-    return (
-        <ul>
-            {campers && campers.items &&
-            campers.items.map((camper) => (
-                <CamperCard key={camper.id} camper={camper}/>
+  const dispatch = useDispatch();
+  const filteredCampers = useSelector(selectFilteredCampers); // Використання селектора
+  
+  useEffect(() => {
+    dispatch(getCampersList());
+  }, [dispatch]);
 
-            ))}      
-        </ul>
-    )
-    
+  return (
+    <ul>
+      {filteredCampers &&
+        filteredCampers.length > 0 &&
+        filteredCampers.map((camper) => (
+          <CamperCard key={camper.id} camper={camper} />
+        ))}
+    </ul>
+  );
 }

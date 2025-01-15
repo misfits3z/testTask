@@ -8,7 +8,8 @@ const filtersSlice = createSlice({
         hasAC: false,
         hasKitchen: false,
         hasTV: false,
-        hasBathroom: false,
+      hasBathroom: false,
+      
         transmission: '',
         vehicleType: '',
     },

@@ -1,13 +1,14 @@
 import { createSelector } from "@reduxjs/toolkit";
 
 export const selectCampers = (state) => state.campers.items;
-export const selectFilter = (state) => state.filters.name;
+export const selectFilter = (state) => state.filters;
 export const selectLoading = (state) => state.campers.loading;
 
 export const selectFilteredCampers = createSelector(
     [selectCampers, selectFilter],
-    (campers, filters) => {
-      return campers.filter((camper) => {
+  (campers, filters) => {
+      const camperArray = campers.items || [];
+      return camperArray.filter((camper) => {
         const matchesLocation = !filters.location || camper.location.includes(filters.location);
         const matchesAC = !filters.hasAC || camper.hasAC === filters.hasAC;
         const matchesKitchen = !filters.hasKitchen || camper.hasKitchen === filters.hasKitchen;
