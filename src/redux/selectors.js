@@ -3,6 +3,9 @@ import { createSelector } from "@reduxjs/toolkit";
 export const selectCampers = (state) => state.campers.items;
 export const selectFilter = (state) => state.filters;
 export const selectLoading = (state) => state.campers.loading;
+export const selectFavorite = (state) => state.favorite.favorite
+export const selectCurrentPage = (state) => state.campers.currentPage;
+export const selectItemsPerPage = (state) => state.campers.itemsPerPage;
 
 export const selectFilteredCampers = createSelector(
     [selectCampers, selectFilter],

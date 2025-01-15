@@ -3,9 +3,15 @@ import { Link } from 'react-router-dom'
 import sprite from '../../images/icons.svg'
 import Equipment from '../Equipment/Equipment'
 import css from './CamperCard.module.css'
+import { useDispatch } from "react-redux";
+import { addFavorite } from "../../redux/favoriteSlice";
 
 export default function CamperCard({camper}) {
-     const location = useLocation();
+  const location = useLocation();
+  const dispatch = useDispatch();
+
+  const handleAddFavorite = () =>
+    dispatch(addFavorite(camper))
 
     
     return (
@@ -17,7 +23,7 @@ export default function CamperCard({camper}) {
                 <div className={css.titleBlock}>
                     <h2>{camper.name}</h2>
                     <p>{ camper.price},00</p>
-                    <button>
+                    <button onClick={handleAddFavorite}>
                         <svg width="26" height="24">
                           <use href={`${sprite}#icon-heart`} />
                         </svg>
