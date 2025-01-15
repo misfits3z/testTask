@@ -2,6 +2,7 @@ import { createSelector } from "@reduxjs/toolkit";
 
 export const selectCampers = (state) => state.campers.items;
 export const selectFilter = (state) => state.filters.name;
+export const selectLoading = (state) => state.campers.loading;
 
 export const selectFilteredCampers = createSelector(
     [selectCampers, selectFilter],
