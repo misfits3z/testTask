@@ -1,5 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import { resetCampers } from "./campersSlice";
 
 
 
@@ -31,6 +32,8 @@ export const getCampersList = createAsyncThunk(
   'campers/fetchAll',
   async (_, thunkAPI) => {
     try {
+        // Очищення попереднього списку
+      thunkAPI.dispatch(resetCampers());
         const response = await axios.get('/campers');
         return response.data;
     } catch (error) {

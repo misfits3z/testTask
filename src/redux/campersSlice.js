@@ -20,6 +20,11 @@ const campersSlice = createSlice({
         selected: [],
         favorites: [],
     },
+    reducers: {
+        resetCampers(state) {
+            state.items = [];
+        }
+    },
     extraReducers: (builder) => {
         builder
             // Обробка getCamperList
@@ -42,3 +47,4 @@ const campersSlice = createSlice({
 });
 
 export default campersSlice.reducer;
+export const { resetCampers } = campersSlice.actions;

@@ -1,17 +1,24 @@
 import { createSelector } from "@reduxjs/toolkit";
 
-
 export const selectCampers = (state) => state.campers.items;
-// export const selectItems = (state) => state.contacts.items;
 export const selectFilter = (state) => state.filters.name;
 
 export const selectFilteredCampers = createSelector(
-    [selectItems, selectFilter],
-    (contacts, filter) => {
-      if (filter) {
-        return contacts.filter((contact) =>
-            contact.name.toLowerCase().includes(filter.toLowerCase())
+    [selectCampers, selectFilter],
+    (campers, filters) => {
+      return campers.filter((camper) => {
+        const matchesLocation = !filters.location || camper.location.includes(filters.location);
+        const matchesAC = !filters.hasAC || camper.hasAC === filters.hasAC;
+        const matchesKitchen = !filters.hasKitchen || camper.hasKitchen === filters.hasKitchen;
+        const matchesTV = !filters.hasTV || camper.hasTV === filters.hasTV;
+        const matchesBathroom = !filters.hasBathroom || camper.hasBathroom === filters.hasBathroom;
+        const matchesTransmission = !filters.transmission || camper.transmission === filters.transmission;
+        const matchesVehicleType = !filters.vehicleType || camper.vehicleType === filters.vehicleType;
+        return (
+          matchesLocation && matchesAC && matchesKitchen && matchesTV && matchesBathroom && matchesTransmission && matchesVehicleType
+
         );
-      } else return contacts;
+        
+      });
     }
 );
