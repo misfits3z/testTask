@@ -9,12 +9,20 @@ axios.defaults.baseURL = 'https://66b1f8e71ca8ad33d4f5f63e.mockapi.io/';
 
 export const getCampersList = createAsyncThunk(
   'campers/fetchAll',
-  async (_, thunkAPI) => {
+  async (filters, thunkAPI) => {
     try {
         // Очищення попереднього списку
       thunkAPI.dispatch(resetCampers());
-      const response = await axios.get('/campers');
-      console.log('Campers List:', response.data);
+
+      const params = Object.keys(filters)
+        .filter((key) => filters[key])
+        .reduce((acc, key) => {
+          acc[key] = filters[key];
+          return acc;
+        },{})
+
+      const response = await axios.get('/campers', {params});
+      console.log('Filtered campers List:', response.data);
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.response?.data.message || 'Error fetching contacts');
