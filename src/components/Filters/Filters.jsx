@@ -18,13 +18,15 @@ export default function Filters() {
           className={css.input}
         />
       </div>
+      <div className={css.filtersWrapper}>
 
-      <p>Filters</p>
-      <VehicleEquipment />
-      <VehicleType />
+        <p className={css.filtersP}>Filters</p>
+        <VehicleEquipment />
+        <VehicleType />
+      </div>
 
       <div>
-        <button>Search</button>
+        <button className={css.filtersBtn}>Search</button>
       </div>
     </div>
   );

@@ -33,7 +33,7 @@ export default function CampersList() {
         ))}
       </ul>
       {filteredCampers.length > displayedCampers.length && (
-        <button onClick={handleLoadMore}>Load More</button>
+        <button className={css.loadMoreBtn} onClick={handleLoadMore}>Load More</button>
       )}
     </div>
   );

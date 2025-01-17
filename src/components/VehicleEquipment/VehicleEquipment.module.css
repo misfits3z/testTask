@@ -1,0 +1,66 @@
+.vehicleEquipmentForm {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-top: 24px;
+}
+.vehicleEquipmenText{
+   font-size: 20px; 
+   text-align: left;
+   font-weight: 600;
+   font-family: var(--font-family);
+   
+
+}
+.vehicleEquipmenP{
+    position: relative;
+    padding-bottom: 24px;
+}
+.vehicleEquipmenP::after{
+    content: '';
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    width: 100%; 
+    height: 1px;
+    background-color: var(--gray-light);
+
+}
+
+.vehicleEquipmentLabel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 112px; 
+  height: 96px; 
+  border: 1px solid var(--gray-light); 
+  border-radius: 8px;
+  background-color: var(--white); 
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.vehicleEquipmentLabel:hover {
+  border-color: var(--button-nav); 
+}
+
+.vehicleEquipmentInput {
+  display: none; 
+}
+
+.vehicleEquipmentInput:checked + .vehicleEquipmentLabel {
+  border-color: var(--button-nav); 
+}
+
+.vehicleEquipmentSvg {
+  width: 32px;
+  height: 32px;
+  margin-bottom: 8px; 
+}
+
+.vehicleEquipmentText {
+  font-size: 14px;
+  color: var(--main); 
+}
