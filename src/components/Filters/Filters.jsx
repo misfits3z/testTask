@@ -1,74 +1,31 @@
-import sprite from '../../images/icons.svg'
+import sprite from '../../images/icons.svg';
+import VehicleEquipment from '../VehicleEquipment/VehicleEquipment';
+import VehicleType from '../VehicleType/VehicleType';
+import css from './Filters.module.css';
 
 export default function Filters() {
-    
+  return (
+    <div className={css.filtersBlock}>
+      <div className={css.inputWrapper}>
+        <label>Location</label>
+        <svg className={css.location} width="20" height="20">
+          <use href={`${sprite}#icon-map`} />
+        </svg>
+        <input
+          type="text"
+          name="location"
+          placeholder="Kyiv, Ukraine"
+          className={css.input}
+        />
+      </div>
 
-    return (
-        <div>
-            <div>
-                <form>
-                    <label>
-                        Location
-                        <svg className='{css.location}' width="16" height="16">
-                            <use href={`${sprite}#icon-map`} />
-                        </svg>
-                        <input type="text" name="location" placeholder="City"/>
-                    </label>
-                </form>
-            </div>
-            <p>Filters</p>
-            <div>
-                <form>
-                    <p>Vehicle equipment</p>
-                    {[
-                        "AC",
-                        "Automatic",
-                        "Kitchen",
-                        "TV",
-                        "Bathroom",
-                        "Radio",
-                        "Microwave",
-                        "Refrigerator",
-                        "Petrol",
-                        "Water",
-                        "Gas",
-                    ].map((item) => (
-                        <label key={item}>
-                            <input
-                                type="checkbox"
-                                name="equipment"
-                                value={item}
-                                
-                            />
-                            {item}
-                        </label>
-                    ))}
-                 </form>
+      <p>Filters</p>
+      <VehicleEquipment />
+      <VehicleType />
 
-            </div>
-            <div>
-                <form>
-                    <p>Vehicle type</p>
-                    {["Van", "Fully Integrated", "Alcove"].map((type) => (
-                        <label key={type}>
-                            <input
-                                type="radio"
-                                name="type"
-                                value={type}
-                                
-                            />
-                            {type}
-                        </label>
-                    ))}
-                </form>
-            </div>
-            <div>
-                <button >Search</button>
-            </div>
-
-
-              
-        </div>
-    )
-    
+      <div>
+        <button>Search</button>
+      </div>
+    </div>
+  );
 }

@@ -5,6 +5,7 @@ import CamperCard from '../CamperCard/CamperCard'
 import { useEffect } from "react";
 import { getCampersList } from "../../redux/operations";
 import { loadMorePage } from "../../redux/campersSlice";
+import css from './CampersList.module.css'
 
 
 export default function CampersList() {
@@ -26,7 +27,7 @@ export default function CampersList() {
 
   return (
     <div>
-      <ul>
+      <ul className={css.list}>
         {displayedCampers.map((camper) => (
           <CamperCard key={camper.id} camper={camper} />
         ))}

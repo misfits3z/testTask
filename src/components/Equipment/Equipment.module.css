@@ -1,0 +1,35 @@
+.equipmentList{
+    display: flex;
+    flex-wrap: wrap;
+    width: 524px;
+    gap: 8px;
+    text-transform: capitalize;
+    margin-bottom: 24px;
+
+    /* скрол */
+    max-height: 110px;
+    overflow-y: auto;
+    padding-right: 10px;
+
+}
+.equipmentItem{
+    border-radius: 100px;
+    padding: 12px 18px;
+    height: 24px;
+    background: var(--badges);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: auto; 
+    white-space: nowrap; 
+
+}
+.equipmentText{
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--main);
+}
+

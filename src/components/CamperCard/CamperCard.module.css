@@ -1,1 +1,110 @@
 
+.CamperCard{
+
+}
+
+.camper {
+  border: 1px solid var(--gray-light);
+  border-radius: 20px;
+  padding: 24px;
+  width: 838px;
+  display: flex;
+  gap: 24px;
+}
+.infoContainer{
+  flex: 2;
+}
+.img {
+  display: block;
+  border-radius: 10px;
+  width: 292px;
+  height: 320px;
+  background-image: url(../../images/image-not-found.jpg);
+  object-fit: cover;
+}
+.titleBlock {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+.title_wrap h2 {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.33;
+  color: var(--main);
+}
+.priceBlock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.33;
+  color: var(--main);
+}
+ button {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.ratingBlock {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--main);
+}
+/* .rating_wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */
+.star {
+  fill: var(--rating);
+  margin-right: 4px;
+}
+/* .location_wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */
+.location {
+  margin-right: 4px;
+}
+.description {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 525px;
+  margin-bottom: 24px;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 200px;
+  width: 166px;
+  height: 56px;
+  background: var(--button-nav);
+  border: none;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  color: var(--white);
+}
