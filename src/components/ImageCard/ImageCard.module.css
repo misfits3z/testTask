@@ -1,0 +1,8 @@
+.galleryImg {
+  border-radius: 10px;
+  width: 292px;
+  height: 312px;
+  object-fit: cover;
+  display: block;
+  background-image: url(../../images/image-not-found.jpg);
+}

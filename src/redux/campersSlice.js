@@ -1,5 +1,5 @@
 import { createSlice} from "@reduxjs/toolkit";
-import { getCamperDetails, getCampersList } from "./operations";
+import { bookCamper, getCamperDetails, getCampersList } from "./operations";
 
 const handlePending = (state) => {
   state.isLoading = true;
@@ -15,6 +15,7 @@ const campersSlice = createSlice({
     name: "campers",
     initialState: {
         items: [],
+        bookings: [],
         isLoading: false,
         error: null,
         selected: [],
@@ -48,6 +49,14 @@ const campersSlice = createSlice({
                 state.selected = action.payload;
             })
             .addCase(getCamperDetails.rejected, handleRejected)
+        //  обробка bookCamper
+            .addCase(bookCamper.pending, handlePending)
+            .addCase(bookCamper.fulfilled, (state, action) => {
+                state.isLoading = false;
+                state.error = null;
+                state.bookings.push(action.payload);
+            })
+            .addCase(bookCamper.rejected, handleRejected)
     },
 });
 
