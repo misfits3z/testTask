@@ -31,6 +31,26 @@ a{
   --button-hover: #0b44cd;
   --font-family: "Inter", sans-serif;
 }
+
+.react-datepicker__input-container input {
+  border: none;
+  color: var(--gray);
+  width: 100%;
+  max-width: 280px;
+  border-radius: 12px;
+  padding: 10px;
+  height: 24px;
+  background: var(--inputs);
+  border: none;
+  margin-bottom: 14px;
+}
+
+button {
+  cursor: pointer;
+  padding: 0;
+  border: none;
+}
+
 .container{
   width: 1440px;
   padding-left: 64px;

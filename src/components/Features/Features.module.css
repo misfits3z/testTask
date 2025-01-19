@@ -1,0 +1,6 @@
+.featuresWrap{
+    padding: 44px 10px;
+    border-radius: 10px;
+    height: auto;
+    background: var(--inputs);
+}

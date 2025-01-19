@@ -69,24 +69,26 @@ export default function CamperPage() {
               <p className={css.camperDescription}>{camper.description || 'No description available'}</p>
             </section>
             <section>
-                <nav className={css.additionalInfoList}>
-                    <ul>
-                        <li>
-                            <NavLink className={getActiveClass} to="features">
-                               Features
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink className={getActiveClass} to="reviews">
-                               Reviews
-                            </NavLink>
-                        </li>
-                    </ul>
-                </nav>
-                <aside className={css.bookingSection}>
-                    <Outlet />
-                    <BookingForm camper={camper} />
-                </aside>
+                <div > 
+                    <nav className={css.additionalInfoList}>
+                        <ul>
+                            <li>
+                                <NavLink className={getActiveClass} to="features">
+                                   Features
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink className={getActiveClass} to="reviews">
+                                   Reviews
+                                </NavLink>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div className={css.bookingSection}>
+                        <Outlet />
+                        <BookingForm camper={camper} />
+                    </div>
+                </div>
             </section>
         </div>
     );

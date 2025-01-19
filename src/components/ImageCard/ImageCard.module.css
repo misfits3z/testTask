@@ -8,3 +8,7 @@
   background-image: url(../../images/image-not-found.jpg);
 }
 
+.bookingSection{
+  display: flex;
+}
+

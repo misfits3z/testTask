@@ -54,7 +54,7 @@ export default function BookingForm() {
     };
 
     return (
-        <div>
+        <div className={css.formContainer}>
             <h3>Book your campervan now</h3>
             <p>Stay connected! We are always ready to help you.</p>
             <Formik
@@ -63,44 +63,44 @@ export default function BookingForm() {
                 onSubmit={handleSubmit}
             >
                 {({ setFieldValue, values }) => (
-                    <Form>
+                    <Form className={css.form}>
                         <Field
                             name="name"
                             type="text"
-                            className={css.field}
+                            className={css.inputField}
                             placeholder="Name*"
                         />
-                        <ErrorMessage name="name" component="span" className={css.error} />
+                        <ErrorMessage name="name" component="span" className={css.errorMessage} />
 
                         <Field
                             name="email"
                             type="email"
-                            className={css.field}
+                            className={css.inputField}
                             placeholder="Email*"
                         />
-                        <ErrorMessage name="email" component="span" className={css.error} />
+                        <ErrorMessage name="email" component="span" className={css.errorMessage} />
 
                         <ReactDatePicker
                             selected={values.date}
                             onChange={(date) => setFieldValue('date', date)}
-                            minDate={new Date()} // Забороняємо вибір минулих дат
+                            minDate={new Date()}
                             placeholderText="Booking Date*"
                             dateFormat="yyyy-MM-dd"
-                            className={css.field}
+                            className={css.inputField}
                         />
-                        <ErrorMessage name="date" component="span" className={css.error} />
+                        <ErrorMessage name="date" component="span" className={css.errorMessage} />
 
                         <Field
                             name="comment"
                             as="textarea"
-                            className={`${css.field} ${css.textarea}`}
+                            className={`${css.inputField} ${css.textarea}`}
                             placeholder="Comment"
                         />
-                        <ErrorMessage name="comment" component="span" className={css.error} />
+                        <ErrorMessage name="comment" component="span" className={css.errorMessage} />
 
                         <button
                             type="submit"
-                            className={css.btn}
+                            className={css.submitButton}
                             disabled={loading}
                         >
                             {loading ? 'Sending...' : 'Send'}
