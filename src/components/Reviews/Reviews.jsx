@@ -1,21 +1,31 @@
+import { useParams } from "react-router-dom";
 import sprite from "../../images/icons.svg";
 import css from "./Reviews.module.css";
+import { selectSelectedCamper } from "../../redux/selectors";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { getCamperDetails } from "../../redux/operations";
 
-const Reviews = ({ reviews }) => {
+const Reviews = () => {
   // Перевіряємо, чи переданий масив відгуків
-  if (!Array.isArray(reviews)) {
-    return <p>Loading reviews...</p>;
-  }
+  const camper = useSelector(selectSelectedCamper);
+  const dispatch = useDispatch();
+  const { id } = useParams();
 
-  // Якщо масив порожній
-  if (reviews.length === 0) {
-    return <p>No reviews available.</p>;
+  useEffect(() => {
+    if (!camper) {
+      dispatch(getCamperDetails(id)); // Завантажуємо дані, якщо їх ще немає
+    }
+  }, [dispatch, id, camper]);
+
+  if (!camper?.reviews || camper.reviews.length === 0) {
+    return <p className={css.noReviews}>No reviews available.</p>;
   }
 
   // Рендеримо список відгуків
   return (
     <ul className={css.reviewsList}>
-      {reviews.map((review, index) => (
+      {camper.reviews.map((review, index) => (
         <li key={index} className={css.reviewItem}>
           <div className={css.wrap}>
             <p className={css.avatar}>{review.reviewer_name[0]}</p>

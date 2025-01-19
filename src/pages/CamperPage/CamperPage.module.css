@@ -1,0 +1,114 @@
+
+.camperInfoSection{
+    padding: 48px 0 60px;
+
+}
+.camperInfo {
+  /* Загальний контейнер для інформації про кемпер */
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  font-family: var(--font-family);
+}
+
+
+.camperInfo h2{
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.33;
+    color: var(--main);
+    margin-bottom: 8px;
+    text-align: left;
+}
+.reviews,
+.location {
+    display: flex;
+    gap: 4px;
+}
+
+.priceContainer {
+    display: flex;
+    align-items: start;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.33;
+    color: var(--main);
+    margin-bottom: 28px;
+}
+    
+
+.ratingContainer {
+  display: flex;
+  gap: 16px;
+  padding-bottom: 16px;
+}
+
+.starIcon {
+  fill: var(--rating);
+ 
+}
+
+.locationIcon {
+  /* Стилізація іконки локації */
+}
+
+.gallery {
+    display: flex;
+    gap: 48px;
+    /* max-width: 1312px; */
+    margin-bottom: 28px;
+  
+}
+
+.gallery li{
+    width: 292px;
+    height: 312px;
+    overflow: hidden;
+    border: 1px solid #dfdbdb;
+    box-shadow: 0 4px 6px #0000001a;
+    border-radius: 10px;
+}
+
+
+
+.camperDescription {
+  color: var(--text);
+  text-align: left;
+}
+
+.additionalInfoList{
+    display: flex;
+    justify-content: left;
+}
+
+.additionalInfoList ul {
+  
+  display: flex;
+  gap: 40px;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+  color: var(--main);
+  margin-bottom: 24px;
+}
+
+.link {
+  text-decoration: none;
+  color: black;
+  padding-bottom: 5px;
+  position: relative;
+}
+
+.active {
+  color: var(--main)
+}
+
+.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--button-nav)
+}

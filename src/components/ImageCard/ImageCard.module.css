@@ -1,4 +1,5 @@
 .galleryImg {
+  
   border-radius: 10px;
   width: 292px;
   height: 312px;
@@ -6,3 +7,4 @@
   display: block;
   background-image: url(../../images/image-not-found.jpg);
 }
+
