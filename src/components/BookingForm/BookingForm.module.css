@@ -60,3 +60,7 @@
     color: var(--white);
     transition: background-color .3s ease-out;
 }
+
+.submitButton:hover{
+    background-color: var(--button-nav-hover);
+}

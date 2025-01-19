@@ -46,16 +46,3 @@ export const getCampersList = createAsyncThunk(
   }
   );
  
-export const bookCamper = createAsyncThunk(
-  'campers/bookCamper',
-  async (bookingData, thunkAPI) => {
-    try {
-      const response = await axios.post('/bookings', bookingData);
-      return response.data;
-    } catch (error) {
-      return thunkAPI.rejectWithValue(
-        error.response?.data?.message || 'Failed to book camper.'
-      );
-    }
-  }
-);

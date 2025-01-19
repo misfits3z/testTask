@@ -2,15 +2,15 @@ import { ErrorMessage, Field, Formik, Form } from "formik";
 import ReactDatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import css from './BookingForm.module.css';
-import { useDispatch, useSelector } from "react-redux";
+import {  useSelector } from "react-redux";
 import { selectLoading } from "../../redux/selectors";
 import { nanoid } from "nanoid";
-import { bookCamper } from "../../redux/operations";
+
 import * as Yup from 'yup';
 import { Toaster, toast } from "react-hot-toast";
 
 export default function BookingForm() {
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
     const loading = useSelector(selectLoading);
 
     const initialValues = {
@@ -38,19 +38,21 @@ export default function BookingForm() {
             id: nanoid(),
             name: values.name,
             email: values.email,
-            date: values.date.toISOString(), // Зберігаємо дату у форматі ISO
+            date: values.date.toISOString(), 
             comment: values.comment,
         };
 
-        dispatch(bookCamper(newBooking))
-            .unwrap()
-            .then(() => {
-                toast.success(`Booking successful for ${values.date.toLocaleDateString()}`);
-                actions.resetForm();
-            })
-            .catch(() => {
-                toast.error("Booking failed. Please try again.");
-            });
+        // Імітація відправки на сервер
+        setTimeout(() => {
+            console.log("New booking data:", newBooking); 
+            
+            toast.success(`Booking successful for ${values.date.toLocaleDateString()}`);
+            actions.resetForm();
+        }, 2000);
+
+        setTimeout(() => {
+            toast.error("Booking failed. Please try again.");
+        }, 2000);
     };
 
     return (

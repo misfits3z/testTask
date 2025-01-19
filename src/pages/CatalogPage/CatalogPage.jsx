@@ -6,9 +6,11 @@ export default function CatalogPage() {
     
     
     return (
-        <div className={css.catalogPage}>
-            <Filters />
-            <CampersList/>
+        <div className='container' >
+            <div className={css.catalogPage}>
+                <Filters />
+                <CampersList/>
+            </div>
         </div>
     )
     

@@ -1,6 +1,7 @@
 body, ul, h1, h2, h3, p{
   margin: 0;
   padding: 0;
+  
 }
 
 * {
@@ -52,9 +53,30 @@ button {
 }
 
 .container{
-  width: 1440px;
-  padding-left: 64px;
-  padding-right: 64px;
+  max-width: 100%;
+  padding-left: 16px;
+  padding-right: 16px;
   margin: 0 auto;
+  box-sizing: border-box;
 
+}
+/* 
+@media screen and (min-width: 345px) {
+  .container {
+    width: 345px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .container {
+    width: 768px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+} */
+@media screen and (min-width: 1440px) {
+  .container {
+    width: 1440px;
+    padding-left: 64px;
+    padding-right: 64px;
+  }
 }
