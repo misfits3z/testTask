@@ -1,3 +1,11 @@
+.reviewsList{
+  display: flex;
+  width: 631px;
+  text-align: left;
+  flex-direction: column;
+  gap: 44px;
+}
+
 .wrap {
   display: flex;
   gap: 16px;
@@ -16,7 +24,7 @@
   font-weight: 600;
   font-size: 24px;
   line-height: 1.33;
-  color: var(--button);
+  color: var(--button-nav);
 }
 .info p {
   font-family: var(--font-family);

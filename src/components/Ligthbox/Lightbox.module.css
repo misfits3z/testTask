@@ -1,0 +1,62 @@
+.gallery {
+    display: flex;
+    gap: 48px;
+    /* max-width: 1312px; */
+    margin-bottom: 28px;
+  
+}
+
+.gallery li{
+    width: 292px;
+    height: 312px;
+    overflow: hidden;
+    border: 1px solid #dfdbdb;
+    box-shadow: 0 4px 6px #0000001a;
+    border-radius: 10px;
+}
+
+.thumbnail {
+  cursor: pointer;
+}
+
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.largeImage {
+  max-width: 90%;
+  max-height: 80%;
+}
+
+.closeButton,
+.prevButton,
+.nextButton {
+  position: absolute;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.closeButton {
+  top: 16px;
+  right: 16px;
+}
+
+.prevButton {
+  left: 16px;
+}
+
+.nextButton {
+  right: 16px;
+}

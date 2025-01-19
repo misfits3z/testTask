@@ -5,9 +5,10 @@ import { useEffect } from 'react';
 import { getCamperDetails } from '../../redux/operations';
 import { NavLink, Outlet, useParams } from 'react-router-dom';
 import sprite from '../../images/icons.svg'
-import ImageCard from '../../components/ImageCard/ImageCard';
+
 import Loader from '../../components/Loader/Loader';
 import BookingForm from '../../components/BookingForm/BookingForm'
+import Lightbox from '../../components/Ligthbox/Lightbox';
 
 export default function CamperPage() {
 
@@ -59,13 +60,7 @@ export default function CamperPage() {
                   <p>€{camper.price || 0},00</p>
                 </div>
               </div>
-              <ul className={css.gallery}>
-                {camper.gallery?.map((img, index) => (
-                  <li key={index}>
-                    <ImageCard img={img} alt={camper.name} />
-                  </li>
-                )) || <p>No images available</p>}
-              </ul>
+              <Lightbox images={camper.gallery} alt={camper.name || "Camper"} />
               <p className={css.camperDescription}>{camper.description || 'No description available'}</p>
             </section>
             <section>
